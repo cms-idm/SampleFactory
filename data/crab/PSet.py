@@ -9,7 +9,11 @@ process.source = cms.Source(
     # lumisToProcess=cms.untracked.VLuminosityBlockRange("254231:1-254231:24")
 )
 
-process.options.numberOfThreads=4
+#process.options.numberOfThreads=4
+process.options = cms.untracked.PSet(
+    numberOfThreads = cms.untracked.uint32(4)
+)
+
 process.source.fileNames = [
 #    '../../NanoAOD/test/lzma.root'  # you can change only this line
 ]

@@ -10,6 +10,7 @@ import warnings
 from scripts.logger import Logger
 from scripts.argparser import ArgParser
 
+import importlib.util
 
 class SubmitFactory:
     def __init__(self):
@@ -37,6 +38,16 @@ class SubmitFactory:
         if not out:
             Logger.ERROR(json_file + " is empty")
         return out
+
+    def __extract_gridpack_info(self, fragment_path):
+        spec = importlib.util.spec_from_file_location("fragment", fragment_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        prefix = getattr(module, "gridpackPath_prefix", "")
+        name = getattr(module, "gridpackPath", None)
+
+        return prefix, name
 
     def __validate_ARGS(self):
         if not os.path.exists(self.ARGS["chain"]):
@@ -272,6 +283,22 @@ class SubmitFactory:
 
         if self.ARGS["fragment"]:
             os.system(f"cp " + self.ARGS["fragment"] + f" {self.SUBMITDIR}/fragment.py")
+
+            frag_path = f"{self.SUBMITDIR}/fragment.py"
+            prefix, name = self.__extract_gridpack_info(frag_path)
+
+            if name:
+                full_path = prefix + name if prefix else name
+                local_path = f"{self.SUBMITDIR}/{name}"
+
+                print(f"[SubmitFactory] Staging gridpack:")
+                print(f"  remote: {full_path}")
+                print(f"  local : {local_path}")
+
+                if not os.path.exists(local_path):
+                    os.system(f"xrdcp {full_path} {local_path}")
+
+                self.files.append(name)
 
     def __submit_JOBS(self):
         launching_os = self.BASE_OS[0].split("_")[0]

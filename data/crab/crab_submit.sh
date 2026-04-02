@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-cmsrel CMSSW_15_1_0_pre4
-cd CMSSW_15_1_0_pre4/src
+cmsrel CMSSW_12_6_5
+cd CMSSW_12_6_5/src
 cmsenv
 cd ../..
 crab submit -c crab.py
