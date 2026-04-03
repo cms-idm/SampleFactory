@@ -5,10 +5,12 @@ import os
 #gridpackPath = "root://cmseos.fnal.gov//store/group/lpcmetx/iDMe/gridpacks_UL_final/iDMe_Mchi-42p0_dMchi-4p0_mZDinput-120p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz" 
 
 ## Kyungmin: GeneratorInterface/LHEInterface/data/run_generic_tarball_xrootd.sh does not exist for CMSSW_10_6_26 that is the GEN step for Run2; boh gotta use some detour
-gridpackPath_prefix = "root://eoscms.cern.ch//eos/cms/store/group/cmst3/group/l1tr/kypark/SampleFactory/gridpacks/"
-gridpackPath = "iDMe_Mchi-42p0_dMchi-4p0_mZDinput-120p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz"
+#gridpackPath_prefix = "root://cmseos.fnal.gov//store/group/lpcmetx/iDMe/gridpacks_UL_final/"
+#gridpackPath = "iDMe_Mchi-42p0_dMchi-4p0_mZDinput-120p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz"
+#nEvents = 50000
 
-nEvents = 50000
+gridpackPath = os.environ.get("GRIDPACK")
+nEvents = int(os.environ.get("NEVENTS"))
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
     args = cms.vstring(os.getcwd() + '/' + gridpackPath),

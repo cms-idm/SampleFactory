@@ -51,6 +51,10 @@ def ArgParser(file_name):
     parser.add_argument("--blacklist", required="", type=str, default=None, help="Sites to blacklist (comma separated)")
     parser.add_argument("--whitelist", required="", type=str, default=None, help="Sites to whitelist (comma separated)")
 
+    parser.add_argument("--gridpack", required=False, type=str, help="Gridpack filename (or full path)")
+    parser.add_argument("--gridpack_prefix", required=False, type=str, default="", help="xrootd prefix for gridpack (e.g. root://...)")
+    parser.add_argument("--year", required=False, type=str, default=None, help="Override year (optional)")
+
     args = parser.parse_args()
 
     if args.host == "":

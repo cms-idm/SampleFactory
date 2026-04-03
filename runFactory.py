@@ -10,6 +10,7 @@ import warnings
 from scripts.logger import Logger
 from scripts.argparser import ArgParser
 
+import re
 import importlib.util
 
 class SubmitFactory:
@@ -38,6 +39,31 @@ class SubmitFactory:
         if not out:
             Logger.ERROR(json_file + " is empty")
         return out
+
+    def __parse_year(self):
+        name = self.CHAIN_NAME
+
+        if "UL18" in name:
+            return "2018"
+        elif "UL17" in name:
+            return "2017"
+        elif "UL16" in name and "APV" in name:
+            return "2016APV"
+        elif "UL16" in name and "APV" not in name:
+            return "2016"
+
+    def __parse_mass(self):
+        m = re.search(r"Mchi-[^_]+_dMchi-[^_]+", self.GRIDPACK)
+        if not m:
+            raise RuntimeError(f"Could not parse mass from gridpack: {gridpack}")
+        return m.group(0)
+
+    def __parse_ctau(self):
+        base = os.path.basename(self.ARGS["fragment"])
+        m = re.search(r"ctau-[^_.]+", base)
+        if not m:
+            raise RuntimeError(f"Could not parse ctau from fragment name: {base}")
+        return m.group(0)
 
     def __extract_gridpack_info(self, fragment_path):
         spec = importlib.util.spec_from_file_location("fragment", fragment_path)
@@ -72,6 +98,15 @@ class SubmitFactory:
 
     def __prepare_JOBS(self):
         chain_json = self.__read_JSON(self.ARGS["chain"])
+        
+        self.GRIDPACK = self.ARGS.get("gridpack")
+        self.GRIDPACK_PREFIX = self.ARGS.get("gridpack_prefix", "")
+
+        self.NEVENTS = self.ARGS.get("nevents")
+
+        if not self.GRIDPACK:
+            Logger.ERROR("gridpack argument is required")
+
         steps = chain_json["STEPS"]
         workflows = chain_json["WORKFLOWS"]
         keeps = chain_json["KEEPS"]
@@ -98,7 +133,15 @@ class SubmitFactory:
                 self.FRAGMENT_NAME = "job" 
 
         self.CHAIN_NAME = os.path.basename(self.ARGS["chain"]).split(".")[0]
-        self.JOBDIR = f"{self.FRAGMENT_NAME}/{self.CHAIN_NAME}/{self.TIMESTAMP}"
+
+        self.MASS = self.__parse_mass()
+        self.CTAU = self.__parse_ctau()
+        self.YEAR = self.__parse_year()
+
+        self.LABEL = f"{self.YEAR}_{self.MASS}_{self.CTAU}"
+
+        #self.JOBDIR = f"{self.FRAGMENT_NAME}/{self.CHAIN_NAME}/{self.TIMESTAMP}"
+        self.JOBDIR = f"{self.FRAGMENT_NAME}/{self.LABEL}/{self.TIMESTAMP}"
         self.SUBMITDIR = f"{os.environ['PWD']}/jobs/{self.JOBDIR}"
 
         os.system(f"mkdir -p {self.SUBMITDIR}")
@@ -118,7 +161,9 @@ class SubmitFactory:
                 raise TypeError("envs in user json must be a dict")
             for k,v in user_json["envs"].items():
                 run_writes.append(f"export {k}='{v}'")    
-            
+                run_writes.append(f"export GRIDPACK='{self.GRIDPACK}'")
+                run_writes.append(f"export NEVENTS='{self.NEVENTS}'")
+ 
         run_writes.append("echo 'JOBINDEX ===>' ${PROCID}\n")
         run_writes.append(f"source /cvmfs/cms.cern.ch/cmsset_default.sh\n")
         # steps that requires fragments as inputs (root requests)
@@ -284,21 +329,21 @@ class SubmitFactory:
         if self.ARGS["fragment"]:
             os.system(f"cp " + self.ARGS["fragment"] + f" {self.SUBMITDIR}/fragment.py")
 
-            frag_path = f"{self.SUBMITDIR}/fragment.py"
-            prefix, name = self.__extract_gridpack_info(frag_path)
+            # Gridpack handling
+            full_path = self.GRIDPACK_PREFIX + self.GRIDPACK if self.GRIDPACK_PREFIX else self.GRIDPACK
+            local_path = f"{self.SUBMITDIR}/{self.GRIDPACK}"
 
-            if name:
-                full_path = prefix + name if prefix else name
-                local_path = f"{self.SUBMITDIR}/{name}"
+            print(f"[SubmitFactory] Staging gridpack:")
+            print(f"  remote: {full_path}")
+            print(f"  local : {local_path}")
 
-                print(f"[SubmitFactory] Staging gridpack:")
-                print(f"  remote: {full_path}")
-                print(f"  local : {local_path}")
+            if not os.path.exists(local_path):
+                os.system(f"xrdcp {full_path} {local_path}")
 
-                if not os.path.exists(local_path):
-                    os.system(f"xrdcp {full_path} {local_path}")
+            if not os.path.exists(local_path):
+                Logger.ERROR(f"Failed to stage gridpack: {full_path}")
 
-                self.files.append(name)
+            self.files.append(self.GRIDPACK)
 
     def __submit_JOBS(self):
         launching_os = self.BASE_OS[0].split("_")[0]
@@ -341,7 +386,11 @@ class SubmitFactory:
             """
 
             os.system(f"cp {self.FACTORY}/data/condor/" + self.ARGS["host"] + f"/condor.jds {self.SUBMITDIR}/")
-            os.system(f"sed -i 's|@@JobBatchName@@|{self.FRAGMENT_NAME}__{self.CHAIN_NAME}|g' {self.SUBMITDIR}/condor.jds")
+            #os.system(f"sed -i 's|@@JobBatchName@@|{self.FRAGMENT_NAME}__{self.CHAIN_NAME}|g' {self.SUBMITDIR}/condor.jds")
+
+            request_name = f"iDMe_{self.LABEL}"
+            os.system(f"sed -i 's|@@JobBatchName@@|{request_name}|g' {self.SUBMITDIR}/crab.py")            
+
             os.system(f"sed -i 's|@@RequestMemory@@|" + self.ARGS["memory"] + f"|g' {self.SUBMITDIR}/condor.jds")
             # TODO generalize needed inputs for other use cases
             files = ",".join(files)
@@ -395,7 +444,10 @@ class SubmitFactory:
             os.system(f"sed -i 's|@@SUBMITDIR@@|{self.SUBMITDIR}|g' {self.SUBMITDIR}/crab.py")
             os.system(f"sed -i 's|@@njobs@@|" + self.ARGS["njobs"] + f"|g' {self.SUBMITDIR}/crab.py")
             os.system(f"sed -i 's|@@nevents@@|" + self.ARGS["nevents"] + f"|g' {self.SUBMITDIR}/crab.py")
-            os.system(f"sed -i 's|@@OUTDIR@@|{self.CRAB_PATH}/SampleFactory|g' {self.SUBMITDIR}/crab.py")
+            #os.system(f"sed -i 's|@@OUTDIR@@|{self.CRAB_PATH}/SampleFactory|g' {self.SUBMITDIR}/crab.py")
+            outdir = f"{self.CRAB_PATH}/{self.YEAR}/MINIAOD/{self.MASS}/{self.CTAU}"
+            os.system(f"sed -i 's|@@OUTDIR@@|{outdir}|g' {self.SUBMITDIR}/crab.py")
+
             os.system(f"sed -i 's|@@SITE@@|{self.CRAB_SITE}|g' {self.SUBMITDIR}/crab.py")
             if self.ARGS["blacklist"]:
                 os.system(f"sed -i 's|@@BLACKLIST@@|" + self.ARGS["blacklist"].replace(',','","') + f"|g' {self.SUBMITDIR}/crab.py")
@@ -426,6 +478,18 @@ class SubmitFactory:
             if self.ARGS["test"]:
                 Logger.INFO(f"Testing the submission script in {self.SUBMITDIR} (dryrun)")
                 os.system(f"sed -i 's|crab submit -c crab.py|crab submit -c crab.py --dryrun|g' {self.SUBMITDIR}/crab_submit.sh")
+
+            print("\n================ Double-check this ================")
+            print(f"CHAIN      : {self.CHAIN_NAME}")
+            print(f"GRIDPACK   : {self.GRIDPACK}")
+            print(f"PREFIX     : {self.GRIDPACK_PREFIX}")
+            print(f"MASS       : {self.MASS}")
+            print(f"CTAU       : {self.CTAU}")
+            print(f"YEAR       : {self.YEAR}")
+            print(f"OUTDIR     : {outdir}")
+            print("=============================================\n")
+
+            input("Press Enter to submit!")
 
             print("\n------------------- SUBMIT SETTINGS -------------------\n")
             os.system(f"cat {self.SUBMITDIR}/crab.py")
