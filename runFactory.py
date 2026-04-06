@@ -390,7 +390,6 @@ class SubmitFactory:
 
             request_name = f"iDMe_{self.LABEL}"
             os.system(f"sed -i 's|@@JobBatchName@@|{request_name}|g' {self.SUBMITDIR}/crab.py")            
-
             os.system(f"sed -i 's|@@RequestMemory@@|" + self.ARGS["memory"] + f"|g' {self.SUBMITDIR}/condor.jds")
             # TODO generalize needed inputs for other use cases
             files = ",".join(files)
@@ -448,6 +447,10 @@ class SubmitFactory:
             outdir = f"{self.CRAB_PATH}/{self.YEAR}/MINIAOD/{self.MASS}/{self.CTAU}"
             os.system(f"sed -i 's|@@OUTDIR@@|{outdir}|g' {self.SUBMITDIR}/crab.py")
 
+            request_name = f"iDMe_{self.LABEL}"
+            os.system(f"sed -i 's|@@LABEL@@|{self.LABEL}|g' {self.SUBMITDIR}/crab.py")
+            os.system(f"sed -i 's|@@TIMESTAMP@@|{self.TIMESTAMP}|g' {self.SUBMITDIR}/crab.py")
+ 
             os.system(f"sed -i 's|@@SITE@@|{self.CRAB_SITE}|g' {self.SUBMITDIR}/crab.py")
             if self.ARGS["blacklist"]:
                 os.system(f"sed -i 's|@@BLACKLIST@@|" + self.ARGS["blacklist"].replace(',','","') + f"|g' {self.SUBMITDIR}/crab.py")

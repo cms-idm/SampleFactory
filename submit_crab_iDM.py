@@ -1,56 +1,61 @@
+import json
 import subprocess
 import re
+import os
+import argparse
 
-gridpack = "iDMe_Mchi-42p0_dMchi-4p0_mZDinput-120p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz"
-gridpack_prefix = "root://cmseos.fnal.gov//store/group/lpcmetx/iDMe/gridpacks_UL_final/"
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--input", required=True, help="JSON file with signal points")
+args = parser.parse_args()
 
-chain_json = "chain_RunIISummer20UL18GEN-RunIISummer20UL18MiniAODv2.json"
-fragment = "iDMe_pythiaGenFragment_ctau-1.py"
+with open(args.input) as f:
+    config = json.load(f)
 
-num_evt_per_job = 2000
-num_jobs = 10
+chain = config["chain"]
+prefix = config["gridpack_prefix"]
 
-max_minutes = 720 # 12 hours
-max_memory = 5000
+for p in config["points"]:
 
-# Prepare crab submission
-cmd = [
-    "./runFactory.py",
-    "-c", "data/chains/Run2/"+chain_json,
-    "-f", "data/fragments/"+fragment,
-    "-n", str(num_evt_per_job),
-    "-j", str(num_jobs),
-    "--minutes", str(max_minutes),
-    "--memory", str(max_memory),
-    "--crab",
-    "--gridpack", gridpack,
-    "--gridpack_prefix", gridpack_prefix
-]
+    gridpack = p["gridpack"]
+    fragment = p["fragment"]
+    nevt     = p["nevents_per_job"]
+    njobs    = p["njobs"]
 
-# Check 
-total = num_evt_per_job * num_jobs
+    m = re.search(r"Mchi-[^_]+_dMchi-[^_]+", gridpack)
+    mass = m.group(0) if m else "unknown"
 
-m = re.search(r"Mchi-[^_]+_dMchi-[^_]+", gridpack)
-mass = m.group(0) if m else "unknown"
+    m = re.search(r"ctau-[^_.]+", fragment)
+    ctau = m.group(0) if m else "ctau-unknown"
 
-total = num_evt_per_job * num_jobs
+    total = nevt * njobs
 
-print("\n================ SUBMISSION ================")
-print(f"gridpack     : {gridpack}")
-print(f"mass         : {mass}")
-print(f"prefix       : {gridpack_prefix}")
-print(f"chain        : {chain_json}")
-print(f"fragment     : {fragment}")
-print(f"events/job   : {num_evt_per_job}")
-print(f"jobs         : {num_jobs}")
-print(f"total events : {total}")
-print("===========================================\n")
+    print("\n===========================================")
+    print(f"gridpack : {gridpack}")
+    print(f"mass     : {mass}")
+    print(f"ctau     : {ctau}")
+    print(f"events   : {total} ({nevt} x {njobs})")
+    print("===========================================\n")
 
-input("Press Enter to run the crab submission code")
+    cmd = [
+        "./runFactory.py",
+        "-c", f"data/chains/Run2/{chain}",
+        "-f", f"data/fragments/{fragment}",
+        "-n", str(nevt),
+        "-j", str(njobs),
+        "--minutes", "2750",
+        "--memory", "5000",
+        "--nthreads", "4",
+        "--crab",
+        "--gridpack", gridpack,
+        "--gridpack_prefix", prefix
+    ]
 
-# Submit
-print("\nRunning command:\n")
-print(" ".join(cmd))
+    print(" ".join(cmd))
+    
+    confirm = input("Submit this point? (y/n/q): ")
+    if confirm.lower() == "q":
+        break
+    if confirm.lower() != "y":
+        continue
 
-subprocess.run(cmd, check=True)
-
+    subprocess.run(cmd, check=True)

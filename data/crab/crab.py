@@ -12,6 +12,7 @@ config.General.workArea = 'crab_projects'
 config.section_("JobType")
 config.JobType.pluginName = 'PrivateMC'
 config.JobType.allowUndistributedCMSSW = True
+#config.JobType.numCores = 1
 config.JobType.numCores = 4
 config.JobType.maxMemoryMB = @@RequestMemory@@
 config.JobType.maxJobRuntimeMin = @@minutes@@
@@ -30,8 +31,10 @@ config.Data.outputPrimaryDataset = '@@JobBatchName@@'
 config.Data.unitsPerJob = @@nevents@@
 NJOBS = @@njobs@@  # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
 config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
-config.Data.publication = False
-config.Data.outputDatasetTag = 'SampleFactory'
+config.Data.publication = True
+config.Data.outputDatasetTag = '@@LABEL@@_@@TIMESTAMP@@'
+#config.Data.publication = False
+#config.Data.outputDatasetTag = 'SampleFactory'
 config.Data.outLFNDirBase = '@@OUTDIR@@'
 
 config.section_("Site")
