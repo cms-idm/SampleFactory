@@ -1,5 +1,4 @@
 {
-      "FILES": [],
       "STEPS": [
             "RunIISummer20UL16GENAPV",
             "RunIISummer20UL16SIMAPV",
@@ -20,7 +19,7 @@
                         "datatier": "GEN",
                         "conditions": "106X_mcRun2_asymptotic_preVFP_v8",
                         "beamspot": "Realistic25ns13TeV2016Collision",
-                        "step": "GEN",
+                        "step": "LHE,GEN",
                         "geometry": "DB:Extended",
                         "era": "Run2_2016_HIPM",
                         "mc": null

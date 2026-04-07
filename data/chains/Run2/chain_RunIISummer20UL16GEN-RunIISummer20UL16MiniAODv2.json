@@ -1,5 +1,4 @@
 {
-      "FILES": [],
       "STEPS": [
             "RunIISummer20UL16GEN",
             "RunIISummer20UL16SIM",
@@ -20,7 +19,7 @@
                         "datatier": "GEN",
                         "conditions": "106X_mcRun2_asymptotic_v13",
                         "beamspot": "Realistic25ns13TeV2016Collision",
-                        "step": "GEN",
+                        "step": "LHE,GEN",
                         "geometry": "DB:Extended",
                         "era": "Run2_2016",
                         "mc": null
