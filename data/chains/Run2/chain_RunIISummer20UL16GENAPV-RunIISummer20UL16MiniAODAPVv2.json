@@ -1,0 +1,137 @@
+{
+      "FILES": [],
+      "STEPS": [
+            "RunIISummer20UL16GENAPV",
+            "RunIISummer20UL16SIMAPV",
+            "RunIISummer20UL16DIGIPremixAPV",
+            "RunIISummer20UL16HLTAPV",
+            "RunIISummer20UL16RECOAPV",
+            "RunIISummer20UL16MiniAODAPVv2"
+      ],
+      "KEEPS": [
+            "RunIISummer20UL16MiniAODAPVv2"
+      ],
+      "WORKFLOWS": {
+            "RunIISummer20UL16GENAPV": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_19_patch2",
+                  "OPTIONS": {
+                        "eventcontent": "RAWSIM",
+                        "datatier": "GEN",
+                        "conditions": "106X_mcRun2_asymptotic_preVFP_v8",
+                        "beamspot": "Realistic25ns13TeV2016Collision",
+                        "step": "GEN",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2016_HIPM",
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL16SIMAPV": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_17_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "RAWSIM",
+                        "datatier": "GEN-SIM",
+                        "conditions": "106X_mcRun2_asymptotic_preVFP_v8",
+                        "beamspot": "Realistic25ns13TeV2016Collision",
+                        "step": "SIM",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2016_HIPM",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL16DIGIPremixAPV": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_17_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "PREMIXRAW",
+                        "datatier": "GEN-SIM-DIGI",
+                        "conditions": "106X_mcRun2_asymptotic_preVFP_v8",
+                        "step": "DIGI,DATAMIX,L1,DIGI2RAW",
+                        "procModifiers": "premix_stage2",
+                        "geometry": "DB:Extended",
+                        "datamix": "PreMix",
+                        "era": "Run2_2016_HIPM",
+                        "pileup_input": "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL16_106X_mcRun2_asymptotic_v13-v1/PREMIX",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL16HLTAPV": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_8_0_36_UL_patch2",
+                  "OPTIONS": {
+                        "eventcontent": "RAWSIM",
+                        "outputCommand": "\"keep *_mix_*_*,keep *_genPUProtons_*_*\"",
+                        "datatier": "GEN-SIM-RAW",
+                        "inputCommands": "\"keep *,drop *_*_BMTF_*,drop *PixelFEDChannel*_*_*_*\"",
+                        "conditions": "80X_mcRun2_asymptotic_2016_TrancheIV_v6",
+                        "customise_commands": "\"process.source.bypassVersionCheck = cms.untracked.bool(True)\"",
+                        "step": "HLT:25ns15e33_v4",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2016",
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL16RECOAPV": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_17_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "AODSIM",
+                        "datatier": "AODSIM",
+                        "conditions": "106X_mcRun2_asymptotic_preVFP_v8",
+                        "step": "RAW2DIGI,L1Reco,RECO,RECOSIM",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2016_HIPM",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL16MiniAODAPVv2": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_25",
+                  "OPTIONS": {
+                        "era": "Run2_2016_HIPM",
+                        "procModifiers": "run2_miniAOD_UL",
+                        "step": "PAT",
+                        "geometry": "DB:Extended",
+                        "conditions": "106X_mcRun2_asymptotic_preVFP_v11",
+                        "datatier": "MINIAODSIM",
+                        "eventcontent": "MINIAODSIM",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            }
+      }
+}

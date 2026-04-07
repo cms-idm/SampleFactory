@@ -1,0 +1,135 @@
+{
+      "FILES": [],
+      "STEPS": [
+            "RunIISummer20UL17GEN",
+            "RunIISummer20UL17SIM",
+            "RunIISummer20UL17DIGIPremix",
+            "RunIISummer20UL17HLT",
+            "RunIISummer20UL17RECO",
+            "RunIISummer20UL17MiniAODv2"
+      ],
+      "KEEPS": [
+            "RunIISummer20UL17MiniAODv2"
+      ],
+      "WORKFLOWS": {
+            "RunIISummer20UL17GEN": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_18",
+                  "OPTIONS": {
+                        "eventcontent": "RAWSIM",
+                        "datatier": "GEN",
+                        "conditions": "106X_mc2017_realistic_v6",
+                        "beamspot": "Realistic25ns13TeVEarly2017Collision",
+                        "step": "GEN",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2017",
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL17SIM": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_17_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "RAWSIM",
+                        "datatier": "GEN-SIM",
+                        "conditions": "106X_mc2017_realistic_v6",
+                        "beamspot": "Realistic25ns13TeVEarly2017Collision",
+                        "step": "SIM",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2017",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL17DIGIPremix": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_17_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "PREMIXRAW",
+                        "datatier": "GEN-SIM-DIGI",
+                        "conditions": "106X_mc2017_realistic_v6",
+                        "step": "DIGI,DATAMIX,L1,DIGI2RAW",
+                        "procModifiers": "premix_stage2",
+                        "geometry": "DB:Extended",
+                        "datamix": "PreMix",
+                        "era": "Run2_2017",
+                        "pileup_input": "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL17HLT": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_9_4_14_UL_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "RAWSIM",
+                        "datatier": "GEN-SIM-RAW",
+                        "conditions": "94X_mc2017_realistic_v15",
+                        "customise_commands": "\"process.source.bypassVersionCheck = cms.untracked.bool(True)\"",
+                        "step": "HLT:2e34v40",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2017",
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL17RECO": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_17_patch1",
+                  "OPTIONS": {
+                        "eventcontent": "AODSIM",
+                        "datatier": "AODSIM",
+                        "conditions": "106X_mc2017_realistic_v6",
+                        "step": "RAW2DIGI,L1Reco,RECO,RECOSIM",
+                        "geometry": "DB:Extended",
+                        "era": "Run2_2017",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            },
+            "RunIISummer20UL17MiniAODv2": {
+                  "SCRAM_ARCH": "slc7_amd64_gcc820",
+                  "CMSSW_VERSION": "CMSSW_10_6_20",
+                  "OPTIONS": {
+                        "era": "Run2_2017",
+                        "procModifiers": "run2_miniAOD_UL",
+                        "step": "PAT",
+                        "geometry": "DB:Extended",
+                        "conditions": "106X_mc2017_realistic_v9",
+                        "datatier": "MINIAODSIM",
+                        "eventcontent": "MINIAODSIM",
+                        "runUnscheduled": null,
+                        "mc": null
+                  },
+                  "CUSTOMIZES": {
+                        "pre-cmsRun": [],
+                        "post-cmsRun": [],
+                        "cmssw": []
+                  }
+            }
+      }
+}

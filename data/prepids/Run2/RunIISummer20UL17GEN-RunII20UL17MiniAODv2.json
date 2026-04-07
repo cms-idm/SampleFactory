@@ -1,0 +1,29 @@
+{
+    "SCRAM_ARCH": "slc7_amd64_gcc820",
+    "STEPS": {
+        "RunIISummer20UL17GEN" : {
+            "prepid" : "EXO-RunIISummer20UL17GEN-00007",
+            "note" : "initially LHEGEN; so some dummy # taken from other request"
+        },
+        "RunIISummer20UL17SIM" : {
+            "prepid" : "EXO-RunIISummer20UL17SIM-06279",
+            "note" : ""
+        },
+        "RunIISummer20UL17DIGIPremix" : {
+            "prepid" : "EXO-RunIISummer20UL17DIGIPremix-06756",
+            "note" : ""
+        },
+        "RunIISummer20UL17HLT" : {
+            "prepid" : "EXO-RunIISummer20UL17HLT-06754",
+            "note" : ""
+        },
+        "RunIISummer20UL17RECO" : {
+            "prepid" : "EXO-RunIISummer20UL17RECO-06754",
+            "note" : ""
+        },
+        "RunIISummer20UL17MiniAODv2" : {
+            "prepid" : "EXO-RunIISummer20UL17MiniAODv2-06710",
+            "note" : ""
+        }
+    }
+}
