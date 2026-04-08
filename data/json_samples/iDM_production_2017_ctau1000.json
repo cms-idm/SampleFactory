@@ -1,0 +1,48 @@
+{
+  "chain": "chain_RunIISummer20UL17GEN-RunIISummer20UL17MiniAODv2.json",
+  "gridpack_prefix": "root://cmseos.fnal.gov//store/group/lpcmetx/iDMe/gridpacks_UL_final/",
+  "points": [
+    {
+      "gridpack": "iDMe_Mchi-5p25_dMchi-0p5_mZDinput-15p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 200
+    },
+    {
+      "gridpack": "iDMe_Mchi-10p5_dMchi-1p0_mZDinput-30p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 200
+    },
+    {
+      "gridpack": "iDMe_Mchi-21p0_dMchi-2p0_mZDinput-60p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 200
+    },
+    {
+      "gridpack": "iDMe_Mchi-31p5_dMchi-3p0_mZDinput-90p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+    },
+    {
+      "gridpack": "iDMe_Mchi-33p0_dMchi-6p0_mZDinput-90p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+    },
+    {
+      "gridpack": "iDMe_Mchi-42p0_dMchi-4p0_mZDinput-120p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+    },
+    {
+      "gridpack": "iDMe_Mchi-52p5_dMchi-5p0_mZDinput-150p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+    }
+  ]
+}

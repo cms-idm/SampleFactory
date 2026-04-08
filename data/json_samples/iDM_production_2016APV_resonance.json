@@ -1,0 +1,198 @@
+{
+  "chain": "chain_RunIISummer20UL16GENAPV-RunIISummer20UL16MiniAODAPVv2.json",
+  "gridpack_prefix": "root://cmseos.fnal.gov//store/group/lpcmetx/iDMe/gridpacks_UL_private/",
+  "points": [
+    {
+      "gridpack": "iDMe_Mchi-26p25_dMchi-2p5_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-26p25_dMchi-2p5_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-26p25_dMchi-2p5_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-26p25_dMchi-2p5_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-27p5_dMchi-5p0_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-27p5_dMchi-5p0_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-27p5_dMchi-5p0_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-27p5_dMchi-5p0_mZDinput-75p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-29p4_dMchi-2p8_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-29p4_dMchi-2p8_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-29p4_dMchi-2p8_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-29p4_dMchi-2p8_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-30p8_dMchi-5p6_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-30p8_dMchi-5p6_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-30p8_dMchi-5p6_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-30p8_dMchi-5p6_mZDinput-84p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-33p6_dMchi-3p2_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-33p6_dMchi-3p2_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-33p6_dMchi-3p2_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-33p6_dMchi-3p2_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-35p2_dMchi-6p4_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-35p2_dMchi-6p4_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-35p2_dMchi-6p4_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-35p2_dMchi-6p4_mZDinput-96p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-36p75_dMchi-3p5_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-36p75_dMchi-3p5_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-36p75_dMchi-3p5_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-36p75_dMchi-3p5_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   },
+   {
+      "gridpack": "iDMe_Mchi-38p5_dMchi-7p0_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },    
+   {
+      "gridpack": "iDMe_Mchi-38p5_dMchi-7p0_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-10.py",
+      "nevents_per_job": 5000,
+      "njobs": 10
+   },
+   {
+      "gridpack": "iDMe_Mchi-38p5_dMchi-7p0_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 5000,
+      "njobs": 20
+   },
+   {
+      "gridpack": "iDMe_Mchi-38p5_dMchi-7p0_mZDinput-105p0_1jet_icckw1_drjj0_xptj80_xqcut20_slc7_amd64_gcc820_CMSSW_10_6_28_tarball.tar.xz",
+      "fragment": "iDMe_pythiaGenFragment_ctau-1000.py",
+      "nevents_per_job": 5000,
+      "njobs": 40
+   }
+  ]
+}
