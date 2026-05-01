@@ -38,7 +38,7 @@ for p in config["points"]:
 
     cmd = [
         "./runFactory.py",
-        "-c", f"data/chains/Run2/{chain}",
+        "-c", f"data/chains/Run3/{chain}",
         "-f", f"data/fragments/{fragment}",
         "-n", str(nevt),
         "-j", str(njobs),

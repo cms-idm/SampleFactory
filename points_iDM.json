@@ -1,0 +1,12 @@
+{
+  "chain": "chain_Run3Summer22EE.json",
+  "gridpack_prefix": "root://cmseos.fnal.gov//store/group/lpcmetx/iDMe/gridpacks/",
+  "points": [
+    {
+      "gridpack": "iDMmu_run3_Mchi-5p25_dMchi-0p5_mZDinput-15p0_ctau-0_1jet_icckw1_drjj0_xptj80_xqcut20_el8_amd64_gcc11_CMSSW_13_0_13_tarball.tar.xz",
+      "fragment": "iDMmu_pythiaGenFragment_ctau-100.py",
+      "nevents_per_job": 4,
+      "njobs": 4
+    }
+  ]
+}

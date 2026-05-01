@@ -18,8 +18,9 @@ class SubmitFactory:
         self.WARNINGS = 0
         self.TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        self.FACTORY = os.getenv("FACTORY")
-        self.MY_NAME = os.getenv("USER")
+        # This sets the factory path to the directory where runFactory.py is located
+        self.FACTORY = os.path.dirname(os.path.abspath(__file__))
+        self.MY_NAME = "alabdelh"
 
         self.BASE_OS = []
 
@@ -51,6 +52,8 @@ class SubmitFactory:
             return "2016APV"
         elif "UL16" in name and "APV" not in name:
             return "2016"
+        elif "22" in name and "EE" in name:
+            return "2022EE"
 
     def __parse_mass(self):
         m = re.search(r"Mchi-[^_]+_dMchi-[^_]+", self.GRIDPACK)
@@ -161,8 +164,8 @@ class SubmitFactory:
                 raise TypeError("envs in user json must be a dict")
             for k,v in user_json["envs"].items():
                 run_writes.append(f"export {k}='{v}'")    
-                run_writes.append(f"export GRIDPACK='{self.GRIDPACK}'")
-                run_writes.append(f"export NEVENTS='{self.NEVENTS}'")
+        run_writes.append(f"export GRIDPACK='{self.GRIDPACK}'")
+        run_writes.append(f"export NEVENTS='{self.NEVENTS}'")
  
         run_writes.append("echo 'JOBINDEX ===>' ${PROCID}\n")
         run_writes.append(f"source /cvmfs/cms.cern.ch/cmsset_default.sh\n")

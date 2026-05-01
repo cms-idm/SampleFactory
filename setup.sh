@@ -11,7 +11,7 @@ echo "--- SampleFactory is at $FACTORY"
 sleep 2
 echo ""
 
-if [ ! -e "$FACTORY/configs/user_${USER}.json" ]; then
+if [ ! -e "$FACTORY/configs/user_alabdelh.json" ]; then
     echo "--- configs/user_${USER}.json is not found!"
     echo "--- Go back to the README instructions"
     sleep 3
