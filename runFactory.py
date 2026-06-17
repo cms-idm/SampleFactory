@@ -20,7 +20,7 @@ class SubmitFactory:
 
         # This sets the factory path to the directory where runFactory.py is located
         self.FACTORY = os.path.dirname(os.path.abspath(__file__))
-        self.MY_NAME = "alabdelh"
+        self.MY_NAME = "reshmar"
 
         self.BASE_OS = []
 
@@ -52,8 +52,8 @@ class SubmitFactory:
             return "2016APV"
         elif "UL16" in name and "APV" not in name:
             return "2016"
-        elif "22" in name and "EE" in name:
-            return "2022EE"
+        elif "22" in name:
+            return "2022"
 
     def __parse_mass(self):
         m = re.search(r"Mchi-[^_]+_dMchi-[^_]+", self.GRIDPACK)
