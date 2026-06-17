@@ -1,0 +1,71 @@
+import os
+import argparse
+
+def ArgParser(file_name):
+
+    file_name = os.path.basename(file_name)
+    if (file_name == "getPileup.py"):
+        required_chain = True
+        required_fragment = False
+        required_nevents = False
+        required_njobs = False
+    else:
+        required_chain = True 
+        required_fragment = False
+        required_nevents = True
+        required_njobs = True
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-c", "--chain", required=required_chain, type=str,
+                        help="Campaign chain to use for sample production"
+                        )
+    parser.add_argument("-f", "--fragment", required=required_fragment, type=str,
+                        help="Fragment file to use for sample production"
+                        )
+    parser.add_argument("-n", "--nevents", required=required_nevents, type=str,
+                        help="Number of events to submit per job"
+                        )
+    parser.add_argument("-o", "--nout", required=False, type=str,
+                        help="Number of events to submit per job"
+                        )
+    parser.add_argument("-j", "--njobs", required=required_njobs, type=str,
+                        help="Number of jobs to submit"
+                        )
+    parser.add_argument("--host", required=False, type=str, default="",
+                        help="Name of the hosting server"
+                        )
+    parser.add_argument("--skip-confirm", required=False, action="store_true", default=False)
+    parser.add_argument("--test", required=False, action="store_true", default=False)
+    parser.add_argument("--crab", required=False, action="store_true", default=False)
+    parser.add_argument("--condor_log", required=False, action="store_true", default=False)
+    parser.add_argument("--force", required=False, action="store_true", default=False) # FIXME forgot the use case for now
+    parser.add_argument("--das_premix", required=False, action="store_true", default=False)
+    parser.add_argument("--flavor", required=False, type=str, default="tomorrow",
+                        help="condor job flavor") 
+    parser.add_argument("--minutes", required=False, type=int, default=2700,
+                        help="crab max job runtime in minutes")
+    parser.add_argument("--nthreads", required=False, type=str, default="4", help="number of threads to use")
+    parser.add_argument("--memory", required=False, type=int, default=10000, help="job memory")
+    parser.add_argument("--name", required=False, type=str, default=None, help="job name")
+    parser.add_argument("--blacklist", required="", type=str, default=None, help="Sites to blacklist (comma separated)")
+    parser.add_argument("--whitelist", required="", type=str, default=None, help="Sites to whitelist (comma separated)")
+
+    parser.add_argument("--gridpack", required=False, type=str, help="Gridpack filename (or full path)")
+    parser.add_argument("--gridpack_prefix", required=False, type=str, default="", help="xrootd prefix for gridpack (e.g. root://...)")
+    parser.add_argument("--year", required=False, type=str, default=None, help="Override year (optional)")
+
+    args = parser.parse_args()
+
+    if args.host == "":
+        args.host = "base"
+        """
+        if "login.uscms.org" in this_host:
+            args.host = "cmsconnect"
+        elif "lxplus" in this_host:
+            args.host = "lxplus"
+        else:
+            args.host = "base"
+        """
+    return args
+

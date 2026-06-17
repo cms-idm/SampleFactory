@@ -39,13 +39,12 @@ generator = cms.EDFilter("Pythia8ConcurrentHadronizerFilter",
         pythiaPylistVerbosity = cms.untracked.int32(1),
         filterEfficiency = cms.untracked.double(1.0),
         pythiaHepMCVerbosity = cms.untracked.bool(False),
-        comEnergy = cms.double(13000.),
+        comEnergy = cms.double(13600.),
         PythiaParameters = cms.PSet(
             pythia8CommonSettingsBlock,
             pythia8CP5SettingsBlock,
             pythia8PSweightsSettingsBlock,
             processParameters = cms.vstring(
-                'SLHA:keepSM = on',
                 'SLHA:minMassSM = 10.',
                 # Very important to enable override!
                 'SLHA:allowUserOverride = on',
@@ -62,7 +61,7 @@ generator = cms.EDFilter("Pythia8ConcurrentHadronizerFilter",
                 '1000023:mWidth = 0.1973269804e-13', # must set decay length by width; doing it by tau0 has not worked in the past
                 #'1000023:tau0 = 1', # try setting tau0 directly
                 # Set decay channels of chi2 (only mu or e+mu)
-                '1000023:oneChannel = 1 1.0 0 1000022 11 -11'#,
+                '1000023:oneChannel = 1 1.0 0 1000022 13 -13'#,
                 ),
             parameterSets = cms.vstring('pythia8CommonSettings',
                 'pythia8CP5Settings',
@@ -151,8 +150,7 @@ genMETfilter2 = cms.EDFilter("CandViewCountFilter",
         )
 
 ## Choose to enable or disable the MET and jet gen-level filters
-#ProductionFilterSequence = cms.Sequence(generator)
-ProductionFilterSequence = cms.Sequence(generator*tmpGenParticles *
-        tmpGenParticlesForJetsNoNu * tmpAk4GenJetsNoNu * genHTFilter *
-        tmpGenMetTrue * genMETfilter1 * genMETfilter2)
-
+ProductionFilterSequence = cms.Sequence(generator)
+#ProductionFilterSequence = cms.Sequence(generator*tmpGenParticles *
+#        tmpGenParticlesForJetsNoNu * tmpAk4GenJetsNoNu * genHTFilter *
+#        tmpGenMetTrue * genMETfilter1 * genMETfilter2)

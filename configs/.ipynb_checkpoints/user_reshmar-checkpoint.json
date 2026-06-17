@@ -1,0 +1,9 @@
+{    
+    "XROOTD_HOST" : "root://cmseos.fnal.gov/",
+    "LFN_PATH" : "/store/group/lpcmetx/iDMe/Samples/signal/2022/MINIAOD",
+    "CRAB_SITE": "T3_US_FNALLPC",
+    "CRAB_PATH": "/store/group/lpcmetx/iDMe/Samples/signal/2022/MINIAOD",
+    "envs":{
+        "GITLAB_TOKEN": "<ADD_YOUR_TOKEN>"
+    }
+}

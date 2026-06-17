@@ -1,0 +1,180 @@
+DEBUG 2026-06-12 18:04:11.262 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-12 18:04:11.262 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-12 18:04:11.262 UTC: 	 Not using Singularity
+DEBUG 2026-06-12 18:04:11.262 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-12 18:04:11.262 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-12 18:04:11.263 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-12 18:04:11.268 UTC: 	 Error: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+ERROR 2026-06-12 18:04:11.268 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 691, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+INFO 2026-06-12 18:04:11.271 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-12 18:43:12.550 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-12 18:43:12.550 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-12 18:43:12.550 UTC: 	 Not using Singularity
+DEBUG 2026-06-12 18:43:12.550 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-12 18:43:12.550 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-12 18:43:12.550 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-12 18:43:12.557 UTC: 	 Error: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+ERROR 2026-06-12 18:43:12.557 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 691, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+INFO 2026-06-12 18:43:12.559 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-15 12:15:38.691 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-15 12:15:38.691 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-15 12:15:38.691 UTC: 	 Not using Singularity
+DEBUG 2026-06-15 12:15:38.691 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-15 12:15:38.691 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-15 12:15:38.692 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-15 12:15:38.724 UTC: 	 Error: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22/ is not a valid CRAB project directory.
+ERROR 2026-06-15 12:15:38.725 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 691, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22/ is not a valid CRAB project directory.
+INFO 2026-06-15 12:15:38.727 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-15 12:17:50.578 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-15 12:17:50.578 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-15 12:17:50.578 UTC: 	 Not using Singularity
+DEBUG 2026-06-15 12:17:50.578 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-15 12:17:50.578 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-15 12:17:50.579 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-15 12:17:50.580 UTC: 	 Error: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+ERROR 2026-06-15 12:17:50.580 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 691, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+INFO 2026-06-15 12:17:50.582 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-15 12:25:48.145 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-15 12:25:48.145 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-15 12:25:48.145 UTC: 	 Not using Singularity
+DEBUG 2026-06-15 12:25:48.145 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-15 12:25:48.145 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-15 12:25:48.145 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-15 12:25:48.146 UTC: 	 Error: jobs/crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+ERROR 2026-06-15 12:25:48.146 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 691, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: jobs/crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+INFO 2026-06-15 12:25:48.148 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-15 12:25:59.810 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-15 12:25:59.810 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-15 12:25:59.810 UTC: 	 Not using Singularity
+DEBUG 2026-06-15 12:25:59.810 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-15 12:25:59.810 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-15 12:25:59.810 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-15 12:25:59.811 UTC: 	 Error: /jobs/crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+ERROR 2026-06-15 12:25:59.811 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 691, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: /jobs/crab_projects/crab_iDMe_pythiaGenFragment_ctau-100__chain_Run3Summer22 is not a valid CRAB project directory.
+INFO 2026-06-15 12:25:59.813 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-15 17:11:12.110 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-15 17:11:12.110 UTC: 	 Running on: Linux cmslpc211.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-15 17:11:12.110 UTC: 	 Not using Singularity
+DEBUG 2026-06-15 17:11:12.110 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-15 17:11:12.110 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-15 17:11:12.111 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-15 17:11:12.119 UTC: 	 Cannot find .requestcache file in CRAB project directory /uscms_data/d3/reshmar/sampleFactory/SampleFactory/jobs/iDMe_pythiaGenFragment_ctau-1
+ERROR 2026-06-15 17:11:12.119 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 695, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 537, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 531, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/ClientUtilities.py", line 445, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /uscms_data/d3/reshmar/sampleFactory/SampleFactory/jobs/iDMe_pythiaGenFragment_ctau-1
+INFO 2026-06-15 17:11:12.121 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
+DEBUG 2026-06-16 19:34:33.535 UTC: 	 CRAB Client version: v3.251020
+DEBUG 2026-06-16 19:34:33.535 UTC: 	 Running on: Linux cmslpc219.fnal.gov 4.18.0-553.126.2.el8_10.x86_64 #1 SMP Thu May 28 09:13:02 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2026-06-16 19:34:33.535 UTC: 	 Not using Singularity
+DEBUG 2026-06-16 19:34:33.535 UTC: 	 Operating System: AlmaLinux 8.10 (Cerulean Leopard)
+DEBUG 2026-06-16 19:34:33.535 UTC: 	 Executing command: 'status'
+DEBUG 2026-06-16 19:34:33.535 UTC: 	 Found CRAB cache file /uscms/home/reshmar/.crab3
+ERROR 2026-06-16 19:34:33.546 UTC: 	 Cannot find .requestcache file in CRAB project directory /uscms_data/d3/reshmar/sampleFactory/SampleFactory/jobs/iDMe_pythiaGenFragment_ctau-100/2022_Mchi-77p0_dMchi-14p0_ctau-100/20260616_143010/crab_projects
+ERROR 2026-06-16 19:34:33.546 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/status.py", line 50, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 695, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 537, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/Commands/SubCommand.py", line 531, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.251020.00/lib/CRABClient/ClientUtilities.py", line 445, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /uscms_data/d3/reshmar/sampleFactory/SampleFactory/jobs/iDMe_pythiaGenFragment_ctau-100/2022_Mchi-77p0_dMchi-14p0_ctau-100/20260616_143010/crab_projects
+INFO 2026-06-16 19:34:33.547 UTC: 	 Log file is /uscms_data/d3/reshmar/sampleFactory/SampleFactory/crab.log
